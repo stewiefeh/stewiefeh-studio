@@ -260,7 +260,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8));
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 50);
-      camera.position.z = 4.4;
+      camera.position.z = 4.9;
 
       // procedural environment from a vertical gradient canvas
       var envCanvas = document.createElement("canvas");
@@ -268,14 +268,18 @@
       var ctx = envCanvas.getContext("2d");
       var g = ctx.createLinearGradient(0, 0, 0, 256);
       g.addColorStop(0, "#FF4D8F");
-      g.addColorStop(0.4, "#8B5CF6");
-      g.addColorStop(0.72, "#2FD8C8");
-      g.addColorStop(1, "#FF9E4D");
+      g.addColorStop(0.16, "#3A1030");
+      g.addColorStop(0.3, "#8B5CF6");
+      g.addColorStop(0.44, "#14101F");
+      g.addColorStop(0.58, "#2FD8C8");
+      g.addColorStop(0.72, "#1A0F2E");
+      g.addColorStop(0.86, "#FF9E4D");
+      g.addColorStop(1, "#2A0F2E");
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 64, 256);
-      ctx.fillStyle = "rgba(255,255,255,0.9)";
-      ctx.fillRect(0, 60, 64, 14);
-      ctx.fillRect(0, 150, 64, 8);
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.fillRect(0, 56, 64, 10);
+      ctx.fillRect(0, 148, 64, 6);
       var envTex = new THREE.CanvasTexture(envCanvas);
       envTex.mapping = THREE.EquirectangularReflectionMapping;
       envTex.colorSpace = THREE.SRGBColorSpace;
@@ -286,15 +290,15 @@
         new THREE.MeshPhysicalMaterial({
           color: 0xEDEAE4,
           metalness: 1.0,
-          roughness: 0.16,
+          roughness: 0.12,
           flatShading: true,
-          envMapIntensity: 1.5,
+          envMapIntensity: 2.0,
           clearcoat: 0.6,
           clearcoatRoughness: 0.2
         })
       );
       var ring2 = new THREE.Mesh(
-        new THREE.TorusGeometry(1.85, 0.035, 16, 120),
+        new THREE.TorusGeometry(1.68, 0.035, 16, 120),
         new THREE.MeshStandardMaterial({ color: 0xF4F1EA, metalness: 1, roughness: 0.3, envMapIntensity: 1.2 })
       );
       ring2.rotation.x = Math.PI / 2.4;
