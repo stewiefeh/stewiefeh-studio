@@ -812,6 +812,8 @@ html.js .hero-title.ready .ch { opacity: 1; transform: none; }
   .work-card:last-child { grid-column: auto; }
   .work-visual { height: 230px; font-size: 2rem; }
   .plan { flex: 0 0 82%; scroll-snap-align: start; }
+  /* cards in a sideways carousel can't wait for a scroll-in reveal: show them */
+  html.js .work-grid [data-reveal], html.js .plans [data-reveal] { opacity: 1; transform: none; transition: none; }
   .swipe-hint {
     display: inline-block;
     margin-top: 12px;
