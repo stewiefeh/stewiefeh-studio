@@ -30,6 +30,7 @@
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
   <div class="nav-right">
@@ -45,6 +46,7 @@
     <a href="#work" data-menu-link><em>Work</em></a>
     <a href="#process" data-menu-link><em>Process</em></a>
     <a href="#pricing" data-menu-link><em>Pricing</em></a>
+    <a href="#reviews" data-menu-link><em>Reviews</em></a>
     <a href="#about" data-menu-link><em>About</em></a>
     <a href="#contact" data-menu-link><em>Contact</em></a>
   </nav>
@@ -83,11 +85,11 @@
   </div>
 
   <section class="work" id="work">
-    <h2 class="section-title split" data-reveal>Featured work</h2>
+    <h2 class="section-title split" data-reveal>Demo projects</h2>
     <p class="section-lede" data-reveal>Every one designed from zero, and no two alike.<span class="swipe-hint" aria-hidden="true"> Swipe to see them all</span></p>
     <div class="work-grid">
       <a class="work-card tilt" href="https://stewiefeh.github.io/tangent/" target="_blank" rel="noopener" data-cursor="view">
-        <div class="work-visual visual-tangent"><span>Tangent</span></div>
+        <div class="work-visual visual-tangent"><span>Tangent</span><iframe class="work-preview" src="https://stewiefeh.github.io/tangent/" loading="lazy" tabindex="-1" aria-hidden="true" title="Live preview of Tangent"></iframe></div>
         <div class="work-meta">
           <h3>Tangent</h3>
           <p>A concept site for a New York design studio: a shader background that reacts to the cursor, a scroll-pinned work gallery, and page-wipe transitions, all hand-written with no libraries.</p>
@@ -95,7 +97,7 @@
         </div>
       </a>
       <a class="work-card tilt" href="https://stewiefeh.github.io/ardane/" target="_blank" rel="noopener" data-cursor="view">
-        <div class="work-visual visual-ardane"><span>Ardane</span></div>
+        <div class="work-visual visual-ardane"><span>Ardane</span><iframe class="work-preview" src="https://stewiefeh.github.io/ardane/" loading="lazy" tabindex="-1" aria-hidden="true" title="Live preview of Ardane"></iframe></div>
         <div class="work-meta">
           <h3>Ardane</h3>
           <p>A bronze-and-oak atelier concept in ink, bone, and brass: virtual smooth scroll, split-character typography, and clip-path reveals. Proof that quiet and animated are not opposites.</p>
@@ -103,7 +105,7 @@
         </div>
       </a>
       <a class="work-card tilt" href="https://stewiefeh.github.io/kroma/" target="_blank" rel="noopener" data-cursor="view">
-        <div class="work-visual visual-kroma"><span>Kroma</span></div>
+        <div class="work-visual visual-kroma"><span>Kroma</span><iframe class="work-preview" src="https://stewiefeh.github.io/kroma/" loading="lazy" tabindex="-1" aria-hidden="true" title="Live preview of Kroma"></iframe></div>
         <div class="work-meta">
           <h3>Kroma</h3>
           <p>A full-color digital studio concept that refuses to whisper. Built to show how much personality a single page can carry when color leads the design.</p>
@@ -208,6 +210,39 @@
         <a class="btn btn-grad" href="mailto:stephenfehon@gmail.com?subject=Custom%20project%20inquiry">Describe your project</a>
       </article>
     </div>
+  </section>
+
+    <section class="reviews" id="reviews">
+    <h2 class="section-title split" data-reveal>Reviews</h2>
+    <p class="section-lede" data-reveal>Real words from real builds. Shipped a site with me? Leave your own below. Every review here came from the person behind the site.</p>
+    <form class="review-card" id="reviewForm" data-reveal>
+      <p class="plan-label">Your rating</p>
+      <fieldset class="review-stars">
+        <legend class="sr-only">Rate from 1 to 5 stars</legend>
+        <input type="radio" id="r5" name="rating" value="5" required><label for="r5" title="5 stars">&#9733;</label>
+        <input type="radio" id="r4" name="rating" value="4"><label for="r4" title="4 stars">&#9733;</label>
+        <input type="radio" id="r3" name="rating" value="3"><label for="r3" title="3 stars">&#9733;</label>
+        <input type="radio" id="r2" name="rating" value="2"><label for="r2" title="2 stars">&#9733;</label>
+        <input type="radio" id="r1" name="rating" value="1"><label for="r1" title="1 star">&#9733;</label>
+      </fieldset>
+      <div class="review-row">
+        <div class="review-field">
+          <label for="rvName">Your name</label>
+          <input id="rvName" name="name" required maxlength="60" autocomplete="name">
+        </div>
+        <div class="review-field">
+          <label for="rvSite">The website built for you</label>
+          <input id="rvSite" name="website" maxlength="120" placeholder="e.g. janesthv.com">
+        </div>
+      </div>
+      <div class="review-field">
+        <label for="rvText">Your opinion</label>
+        <textarea id="rvText" name="opinion" rows="4" required maxlength="600" placeholder="What the site does for your business, how the build went, anything someone should know."></textarea>
+      </div>
+      <button type="submit" class="btn btn-grad">Send my review</button>
+      <p class="review-note">This opens your email app with the review filled in and addressed to me. It goes live after a quick read, so everything on this page stays real.</p>
+      <p class="review-done" hidden>Thanks! Your email app should be open with the review ready to send.</p>
+    </form>
   </section>
 
   <section class="about" id="about">

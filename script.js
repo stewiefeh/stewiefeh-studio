@@ -371,3 +371,22 @@
     showFallback();
   }
 })();
+
+  /* ---------- review form (static site: hands the review to an email draft) ---------- */
+
+  (function () {
+    var form = document.getElementById("reviewForm");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var stars = form.querySelector('input[name="rating"]:checked');
+      var name = document.getElementById("rvName").value.trim();
+      var site = document.getElementById("rvSite").value.trim();
+      var text = document.getElementById("rvText").value.trim();
+      var body = "Name: " + name + "\nWebsite built: " + (site || "not given") + "\nRating: " + stars.value + " / 5\n\n" + text;
+      window.location.href = "mailto:stephenfehon@gmail.com?subject=" + encodeURIComponent("Review: " + stars.value + "/5 from " + name) + "&body=" + encodeURIComponent(body);
+      var done = form.querySelector(".review-done");
+      if (done) { done.hidden = false; }
+    });
+  })();
