@@ -4,7 +4,7 @@
   --bg: #120E1A;
   --bg-2: #1A1426;
   --text: #F4F1EA;
-  --muted: #C9C2DE;
+  --muted: #D3CCE9;
   --line: rgba(244, 241, 234, 0.14);
   --pink: #FF4D8F;
   --violet: #8B5CF6;
@@ -485,6 +485,7 @@ main { position: relative; z-index: 1; }
 /* ---------- sections ---------- */
 
 section { padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 64px); }
+section { scroll-margin-top: 96px; }
 
 .section-title {
   font-family: var(--display);
@@ -775,6 +776,9 @@ html.js .hero-title .ch {
 }
 html.js .hero-title.ready .ch { opacity: 1; transform: none; }
 
+/* ---------- swipe hint ---------- */
+.swipe-hint { display: none; }
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 1000px) {
@@ -807,7 +811,7 @@ html.js .hero-title.ready .ch { opacity: 1; transform: none; }
   .work-card { flex: 0 0 86%; scroll-snap-align: start; }
   .work-card:last-child { grid-column: auto; }
   .work-visual { height: 230px; font-size: 2rem; }
-  .plan { flex: 0 0 88%; scroll-snap-align: start; }
+  .plan { flex: 0 0 82%; scroll-snap-align: start; }
   .swipe-hint {
     display: inline-block;
     margin-top: 12px;
@@ -850,6 +854,5 @@ html.js .hero-title.ready .ch { opacity: 1; transform: none; }
 .plan-badge-ghost { background: transparent; border: 1px solid rgba(255, 255, 255, 0.28); color: var(--text); }
 .price-sm { font-size: 2.4rem; }
 
-/* swipe hints + price note layout */
-.swipe-hint { display: none; }
+/* price note layout */
 .price-sm .price-note { display: block; margin: 6px 0 0; }
