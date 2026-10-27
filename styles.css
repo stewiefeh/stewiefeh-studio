@@ -152,6 +152,8 @@ a { color: inherit; }
   margin-top: 36px;
 }
 
+.stamp span { display: block; }
+.stamp span + span { margin-top: 4px; font-size: 0.85rem; font-weight: 600; }
 .stamp {
   position: absolute;
   right: clamp(16px, 6vw, 96px);
