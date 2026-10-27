@@ -260,7 +260,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8));
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 50);
-      camera.position.z = 4.9;
+      camera.position.z = 5.2;
 
       // procedural environment from a vertical gradient canvas
       var envCanvas = document.createElement("canvas");
@@ -277,28 +277,29 @@
       g.addColorStop(1, "#2A0F2E");
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 64, 256);
-      ctx.fillStyle = "rgba(255,255,255,0.95)";
-      ctx.fillRect(0, 56, 64, 10);
-      ctx.fillRect(0, 148, 64, 6);
+      ctx.fillStyle = "rgba(255,255,255,1)";
+      ctx.fillRect(0, 40, 64, 14);
+      ctx.fillRect(0, 96, 64, 8);
+      ctx.fillRect(0, 170, 64, 12);
       var envTex = new THREE.CanvasTexture(envCanvas);
       envTex.mapping = THREE.EquirectangularReflectionMapping;
       envTex.colorSpace = THREE.SRGBColorSpace;
       scene.environment = envTex;
 
       var gem = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(1.15, 0),
+        new THREE.IcosahedronGeometry(1.1, 1),
         new THREE.MeshPhysicalMaterial({
-          color: 0xEDEAE4,
+          color: 0xD8D4E2,
           metalness: 1.0,
-          roughness: 0.12,
+          roughness: 0.18,
           flatShading: true,
-          envMapIntensity: 2.0,
+          envMapIntensity: 2.2,
           clearcoat: 0.6,
           clearcoatRoughness: 0.2
         })
       );
       var ring2 = new THREE.Mesh(
-        new THREE.TorusGeometry(1.68, 0.035, 16, 120),
+        new THREE.TorusGeometry(1.5, 0.035, 16, 120),
         new THREE.MeshStandardMaterial({ color: 0xF4F1EA, metalness: 1, roughness: 0.3, envMapIntensity: 1.2 })
       );
       ring2.rotation.x = Math.PI / 2.4;
