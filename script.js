@@ -273,7 +273,6 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8));
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 50);
-      camera.position.z = 5.2;
 
       // procedural environment from a vertical gradient canvas
       var envCanvas = document.createElement("canvas");
@@ -332,6 +331,10 @@
         var h = gemCanvas.clientHeight || 480;
         renderer.setSize(w, h, false);
         camera.aspect = w / h;
+        var sinHalf = Math.sin(camera.fov * Math.PI / 360);
+        var distV = 1.8 / sinHalf;
+        var distH = 1.8 / (sinHalf * camera.aspect);
+        camera.position.z = Math.max(distV, distH);
         camera.updateProjectionMatrix();
       };
       size();
