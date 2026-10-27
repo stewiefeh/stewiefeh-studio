@@ -226,7 +226,6 @@ html.fine-pointer .cursor-ring { display: flex; }
   position: relative;
   overflow: hidden;
   transition: transform 0.3s var(--ease), box-shadow 0.3s ease, border-color 0.3s ease;
-  will-change: transform;
 }
 .btn-lg { padding: 16px 36px; font-size: 1.02rem; }
 
