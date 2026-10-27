@@ -4,7 +4,7 @@
   --bg: #120E1A;
   --bg-2: #1A1426;
   --text: #F4F1EA;
-  --muted: #B6AECE;
+  --muted: #C9C2DE;
   --line: rgba(244, 241, 234, 0.14);
   --pink: #FF4D8F;
   --violet: #8B5CF6;
@@ -335,7 +335,8 @@ main { position: relative; z-index: 1; }
   gap: 10px;
   font-weight: 500;
   font-size: 0.92rem;
-  color: var(--muted);
+  color: #EAE5F6;
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 8px 16px;
@@ -375,6 +376,7 @@ main { position: relative; z-index: 1; }
   from { background-position: 0% 50%; }
   to { background-position: 200% 50%; }
 }
+.hero-title .word { display: inline-block; white-space: nowrap; }
 .hero-title .ch { display: inline-block; }
 
 .hero-sub {

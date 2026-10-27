@@ -50,11 +50,24 @@
       var out = [];
       node.childNodes.forEach(function (child) {
         if (child.nodeType === 3) {
-          child.textContent.split("").forEach(function (c) {
-            var s = document.createElement("span");
-            s.className = "ch";
-            s.textContent = c === " " ? "\u00A0" : c;
-            out.push(s);
+          child.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) {
+              var sp = document.createElement("span");
+              sp.className = "ch";
+              sp.textContent = "\u00A0";
+              out.push(sp);
+            } else {
+              var w = document.createElement("span");
+              w.className = "word";
+              part.split("").forEach(function (c) {
+                var cs = document.createElement("span");
+                cs.className = "ch";
+                cs.textContent = c;
+                w.appendChild(cs);
+              });
+              out.push(w);
+            }
           });
         } else if (child.nodeType === 1) {
           var inner = walk(child);
