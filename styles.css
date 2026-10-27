@@ -271,9 +271,9 @@ section { padding: clamp(64px, 10vh, 110px) clamp(20px, 5vw, 64px); }
 }
 .work-card:hover .work-visual { transform: scale(1.035); }
 
-.visual-skiff { background: linear-gradient(150deg, #173F35, #2C6B57); color: #F2EDE3; }
-.visual-inkfall { background: var(--ink); color: var(--paper); }
-.visual-fehonfinds { background: linear-gradient(150deg, #2733E8, #5B67FF); color: var(--paper); }
+.visual-tangent { background: linear-gradient(150deg, #002FA7, #1B44D6); color: #FF5B22; }
+.visual-ardane { background: #131110; color: #B08D57; }
+.visual-kroma { background: linear-gradient(140deg, #FF3D8A 0%, #FF7A1A 45%, #2B6BFF 100%); color: #FFF7EC; }
 
 .work-meta { padding: 26px 28px 30px; }
 .work-meta h3 {
