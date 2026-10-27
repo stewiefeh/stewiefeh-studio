@@ -798,6 +798,6 @@ html.js .hero-title.ready .ch { opacity: 1; transform: none; }
 
 
 /* ---------- brand mark ---------- */
-.brand-mark { width: 22px; height: auto; flex: none; }
+.brand-mark { width: 22px; height: 19px; flex: none; }
 .brand-mark-sm { width: 15px; }
 .foot-brand { display: inline-flex; align-items: center; gap: 8px; }
