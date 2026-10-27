@@ -9,96 +9,100 @@
 <meta property="og:title" content="stewiefeh studio">
 <meta property="og:description" content="Custom websites built from scratch for local businesses. Free sample of your own site before you pay anything.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="topbar">
+<div class="preloader" id="preloader" aria-hidden="true">
+  <p class="pre-word">stewiefeh&nbsp;studio</p>
+  <p class="pre-count" id="preCount">0</p>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor-dot" id="cDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cRing" aria-hidden="true"><span id="cLabel"></span></div>
+
+<header class="nav" id="nav">
   <a class="wordmark" href="#top">stewiefeh&nbsp;studio</a>
-  <nav class="topnav" aria-label="Main">
+  <nav class="nav-links" aria-label="Main">
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
-    <a class="btn btn-ink" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry">Say hello</a>
+    <a href="#contact">Contact</a>
   </nav>
+  <div class="nav-right">
+    <a class="btn btn-light" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry">Start a project</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
 </header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-links" aria-label="Menu">
+    <a href="#work" data-menu-link><em>Work</em></a>
+    <a href="#process" data-menu-link><em>Process</em></a>
+    <a href="#pricing" data-menu-link><em>Pricing</em></a>
+    <a href="#about" data-menu-link><em>About</em></a>
+    <a href="#contact" data-menu-link><em>Contact</em></a>
+  </nav>
+  <p class="menu-foot">stephenfehon@gmail.com</p>
+</div>
+
+<canvas class="bg-canvas" id="bg" aria-hidden="true"></canvas>
 
 <main id="top">
 
   <section class="hero">
-    <p class="avail"><span class="dot" aria-hidden="true"></span> Open for new projects</p>
-    <h1 class="hero-title">
-      <span class="line"><span>Websites built</span></span>
-      <span class="line"><span>from scratch,</span></span>
-      <span class="line"><span>for real <em>businesses</em>.</span></span>
-    </h1>
-    <p class="hero-sub">I'm Stephen, a designer and developer in South Jersey. I design and code every site myself, and before you pay anything I send you a working sample of your own site with your branding on it. If you like it, we build it out. If you don't, you owe nothing.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-ink btn-lg" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry">Start a project</a>
-      <a class="btn btn-ghost btn-lg" href="#work">See the work</a>
+    <div class="hero-copy">
+      <p class="avail" data-reveal><span class="dot" aria-hidden="true"></span> Open for new projects</p>
+      <h1 class="hero-title" id="heroTitle">Websites built <em>from scratch,</em> for real businesses.</h1>
+      <p class="hero-sub" data-reveal>I'm Stephen, a designer and developer in South Jersey. I design and code every site myself, and before you pay anything I send you a working sample of your own site with your branding on it. If you like it, we build it out. If you don't, you owe nothing.</p>
+      <div class="hero-ctas" data-reveal>
+        <a class="btn btn-grad magnetic" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry">Start a project</a>
+        <a class="btn btn-line magnetic" href="#work">See the work</a>
+      </div>
     </div>
-    <div class="stamp" aria-hidden="true">
-      <span>sample first.</span>
-      <span>pay only if<br>you like it.</span>
+    <div class="gem-wrap" aria-hidden="true">
+      <div class="gem-fallback"></div>
+      <canvas id="gem"></canvas>
     </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>scroll</div>
   </section>
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>towing companies</span><span class="tick">✳</span>
-      <span>pizzerias</span><span class="tick">✳</span>
-      <span>salons</span><span class="tick">✳</span>
-      <span>dentists</span><span class="tick">✳</span>
-      <span>plumbers</span><span class="tick">✳</span>
-      <span>auto shops</span><span class="tick">✳</span>
-      <span>landscapers</span><span class="tick">✳</span>
-      <span>contractors</span><span class="tick">✳</span>
-      <span>restaurants</span><span class="tick">✳</span>
-      <span>barbershops</span><span class="tick">✳</span>
-      <span>gyms</span><span class="tick">✳</span>
-      <span>veterinarians</span><span class="tick">✳</span>
+      <span>towing companies</span><i>✳</i><span>pizzerias</span><i>✳</i><span>salons</span><i>✳</i><span>dentists</span><i>✳</i><span>plumbers</span><i>✳</i><span>auto shops</span><i>✳</i><span>landscapers</span><i>✳</i><span>contractors</span><i>✳</i><span>restaurants</span><i>✳</i><span>barbershops</span><i>✳</i><span>gyms</span><i>✳</i><span>veterinarians</span><i>✳</i>
     </div>
-    <div class="ticker-track" aria-hidden="true">
-      <span>towing companies</span><span class="tick">✳</span>
-      <span>pizzerias</span><span class="tick">✳</span>
-      <span>salons</span><span class="tick">✳</span>
-      <span>dentists</span><span class="tick">✳</span>
-      <span>plumbers</span><span class="tick">✳</span>
-      <span>auto shops</span><span class="tick">✳</span>
-      <span>landscapers</span><span class="tick">✳</span>
-      <span>contractors</span><span class="tick">✳</span>
-      <span>restaurants</span><span class="tick">✳</span>
-      <span>barbershops</span><span class="tick">✳</span>
-      <span>gyms</span><span class="tick">✳</span>
-      <span>veterinarians</span><span class="tick">✳</span>
+    <div class="ticker-track">
+      <span>towing companies</span><i>✳</i><span>pizzerias</span><i>✳</i><span>salons</span><i>✳</i><span>dentists</span><i>✳</i><span>plumbers</span><i>✳</i><span>auto shops</span><i>✳</i><span>landscapers</span><i>✳</i><span>contractors</span><i>✳</i><span>restaurants</span><i>✳</i><span>barbershops</span><i>✳</i><span>gyms</span><i>✳</i><span>veterinarians</span><i>✳</i>
     </div>
   </div>
 
-  <section class="work reveal" id="work">
-    <h2 class="section-title">Recent builds</h2>
-    <p class="section-lede">Every one designed from zero, and no two alike.</p>
+  <section class="work" id="work">
+    <h2 class="section-title split" data-reveal>Featured work</h2>
+    <p class="section-lede" data-reveal>Every one designed from zero, and no two alike.</p>
     <div class="work-grid">
-      <a class="work-card" href="https://stewiefeh.github.io/tangent/" target="_blank" rel="noopener">
-        <div class="work-visual visual-tangent" aria-hidden="true"><span>Tangent</span></div>
+      <a class="work-card tilt" href="https://stewiefeh.github.io/tangent/" target="_blank" rel="noopener" data-cursor="view">
+        <div class="work-visual visual-tangent"><span>Tangent</span></div>
         <div class="work-meta">
           <h3>Tangent</h3>
           <p>A concept site for a New York design studio: a shader background that reacts to the cursor, a scroll-pinned work gallery, and page-wipe transitions, all hand-written with no libraries.</p>
           <span class="work-tag">Interactive one-pager</span>
         </div>
       </a>
-      <a class="work-card" href="https://stewiefeh.github.io/ardane/" target="_blank" rel="noopener">
-        <div class="work-visual visual-ardane" aria-hidden="true"><span>Ardane</span></div>
+      <a class="work-card tilt" href="https://stewiefeh.github.io/ardane/" target="_blank" rel="noopener" data-cursor="view">
+        <div class="work-visual visual-ardane"><span>Ardane</span></div>
         <div class="work-meta">
           <h3>Ardane</h3>
           <p>A bronze-and-oak atelier concept in ink, bone, and brass: virtual smooth scroll, split-character typography, and clip-path reveals. Proof that quiet and animated are not opposites.</p>
           <span class="work-tag">Interactive one-pager</span>
         </div>
       </a>
-      <a class="work-card" href="https://stewiefeh.github.io/kroma/" target="_blank" rel="noopener">
-        <div class="work-visual visual-kroma" aria-hidden="true"><span>Kroma</span></div>
+      <a class="work-card tilt" href="https://stewiefeh.github.io/kroma/" target="_blank" rel="noopener" data-cursor="view">
+        <div class="work-visual visual-kroma"><span>Kroma</span></div>
         <div class="work-meta">
           <h3>Kroma</h3>
           <p>A full-color digital studio concept that refuses to whisper. Built to show how much personality a single page can carry when color leads the design.</p>
@@ -108,33 +112,33 @@
     </div>
   </section>
 
-  <section class="process reveal" id="process">
-    <h2 class="section-title">How a project runs</h2>
+  <section class="process" id="process">
+    <h2 class="section-title split" data-reveal>How a project runs</h2>
     <ol class="steps">
-      <li>
+      <li data-reveal>
         <h3><span class="step-n">1</span>You show me the business</h3>
         <p>Your services, hours, photos, and the one thing you want visitors to do: call, book, order, or walk in.</p>
       </li>
-      <li>
+      <li data-reveal>
         <h3><span class="step-n">2</span>I build a sample</h3>
-        <p>A working draft of your own site, with your name and colors on it. Not a mockup, not a stock template.</p>
+        <p>A working draft of your own site, with your name and colors on it. Not a mockup. Not something anyone else owns.</p>
       </li>
-      <li>
+      <li data-reveal>
         <h3><span class="step-n">3</span>You react</h3>
         <p>You look it over and tell me what to change. Revisions are part of the plan, not an extra bill.</p>
       </li>
-      <li>
+      <li data-reveal>
         <h3><span class="step-n">4</span>It launches</h3>
         <p>Live on your domain, search-ready, and you get support after launch while it settles in.</p>
       </li>
     </ol>
   </section>
 
-  <section class="pricing reveal" id="pricing">
-    <h2 class="section-title">Straightforward pricing</h2>
-    <p class="section-lede">Flat project fees. Half to start, half at launch. Both plans begin with the free sample, so if the sample misses, you owe nothing.</p>
+  <section class="pricing" id="pricing">
+    <h2 class="section-title split" data-reveal>Straightforward pricing</h2>
+    <p class="section-lede" data-reveal>Flat project fees. Half to start, half at launch. Both plans begin with the free sample, so if the sample misses, you owe nothing.</p>
     <div class="plans">
-      <article class="plan">
+      <article class="plan" data-reveal data-tilt-soft>
         <h3>Landing page</h3>
         <p class="price">$500<span class="price-note">one-time</span></p>
         <p class="plan-for">For a single page with one job: turn a search into a phone call, booking, or order.</p>
@@ -154,9 +158,9 @@
           <li>The facts: services, hours, phone, and what you want visitors to do</li>
           <li>Quick answers when I have questions during the build</li>
         </ul>
-        <a class="btn btn-ghost" href="mailto:stephenfehon@gmail.com?subject=Landing%20page%20inquiry">Ask about a landing page</a>
+        <a class="btn btn-line" href="mailto:stephenfehon@gmail.com?subject=Landing%20page%20inquiry">Ask about a landing page</a>
       </article>
-      <article class="plan plan-featured">
+      <article class="plan plan-featured" data-reveal data-tilt-soft>
         <p class="plan-badge">The full build</p>
         <h3>Full custom site</h3>
         <p class="price">$1,500<span class="price-note">one-time</span></p>
@@ -178,35 +182,32 @@
           <li>The facts: services, hours, phone, pages you want, and what you want visitors to do</li>
           <li>Quick answers when I have questions during the build</li>
         </ul>
-        <a class="btn btn-cobalt" href="mailto:stephenfehon@gmail.com?subject=Full%20site%20inquiry">Start a full site</a>
+        <a class="btn btn-grad" href="mailto:stephenfehon@gmail.com?subject=Full%20site%20inquiry">Start a full site</a>
       </article>
     </div>
   </section>
 
-  <section class="about reveal" id="about">
-    <h2 class="section-title">One person, start to finish</h2>
-    <div class="about-body">
+  <section class="about" id="about">
+    <h2 class="section-title split" data-reveal>One person, start to finish</h2>
+    <div class="about-body" data-reveal>
       <p>I'm Stephen Fehon. I design, write, and code every site myself, which means the person you talk to is the person building your site. Nothing gets lost between a sales call and a production team, because there is no production team.</p>
-      <p>I build with modern tools and hand-written code, I test on real phones, and I keep sites fast enough that customers on a bad connection still get them. I also write about building things at <a href="https://stewiefeh.substack.com" target="_blank" rel="noopener">my Substack</a>, if you're curious who you'd be working with.</p>
+      <p>I build with modern tools and hand-written code, I test on real phones, and I keep sites fast enough that customers on a bad connection still get them. Every project gets the same care whether it's a single page or a full site.</p>
     </div>
   </section>
 
-  <section class="contact reveal" id="contact">
-    <h2 class="contact-title">Tell me about<br><em>your business.</em></h2>
-    <a class="contact-mail" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry">stephenfehon@gmail.com</a>
-    <p class="contact-note">I usually reply within a day. Include the business name and what you'd want the site to do, and I'll come back with a plan and a price.</p>
+  <section class="contact" id="contact">
+    <h2 class="contact-title split" data-reveal>Tell me about <em>your business.</em></h2>
+    <a class="contact-mail magnetic" href="mailto:stephenfehon@gmail.com?subject=Project%20inquiry" data-reveal>stephenfehon@gmail.com</a>
+    <p class="contact-note" data-reveal>I usually reply within a day. Include the business name and what you'd want the site to do, and I'll come back with a plan and a price.</p>
   </section>
 
 </main>
 
 <footer class="footer">
   <p>© 2026 stewiefeh studio</p>
-  <nav aria-label="Elsewhere">
-    <a href="https://stewiefeh.substack.com" target="_blank" rel="noopener">Substack</a>
-    <a href="https://github.com/stewiefeh" target="_blank" rel="noopener">GitHub</a>
-  </nav>
+  <a href="https://github.com/stewiefeh" target="_blank" rel="noopener">GitHub</a>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
