@@ -196,14 +196,14 @@
         "vec2 c2=vec2(.62+.2*cos(t*.7+.8), -.28+.26*sin(t*.5+.4));",
         "vec2 c3=vec2(.1+.34*sin(t*.45+2.1), .5+.18*cos(t*.8+1.2));",
         "vec2 c4=vec2(-.25+.3*cos(t*.55+3.4), -.42+.2*sin(t*.75+.9));",
-        "vec3 col=vec3(.062,.048,.094);",
-        "col+=vec3(1.0,.30,.56)*glow(uv,c1,2.4)*.85;",
-        "col+=vec3(.55,.36,.96)*glow(uv,c2,2.6)*.85;",
-        "col+=vec3(.18,.85,.78)*glow(uv,c3,3.0)*.55;",
-        "col+=vec3(1.0,.62,.30)*glow(uv,c4,3.2)*.45;",
+        "vec3 col=vec3(.04,.031,.066);",
+        "col+=vec3(1.0,.30,.56)*glow(uv,c1,2.4)*.5;",
+        "col+=vec3(.55,.36,.96)*glow(uv,c2,2.6)*.5;",
+        "col+=vec3(.18,.85,.78)*glow(uv,c3,3.0)*.34;",
+        "col+=vec3(1.0,.62,.30)*glow(uv,c4,3.2)*.27;",
         "float band=sin(uv.x*1.8+t*3.0)*cos(uv.y*2.2-t*2.2);",
-        "col+=vec3(.10,.06,.20)*band*.5;",
-        "col*=1.0-.42*dot(uv,uv);",
+        "col+=vec3(.08,.05,.16)*band*.4;",
+        "col*=1.0-.58*dot(uv,uv);",
         "col+=(hash(gl_FragCoord.xy+fract(t))-.5)*.035;",
         "gl_FragColor=vec4(col,1.);",
         "}"
@@ -254,10 +254,10 @@
           })();
         }
       } else {
-        bgCanvas.style.background = "radial-gradient(900px 600px at 20% 20%, rgba(255,77,143,.4), transparent 60%), radial-gradient(900px 700px at 80% 30%, rgba(139,92,246,.4), transparent 60%), radial-gradient(800px 600px at 50% 90%, rgba(47,216,200,.3), transparent 60%), #120E1A";
+        bgCanvas.style.background = "radial-gradient(900px 600px at 20% 20%, rgba(255,77,143,.22), transparent 60%), radial-gradient(900px 700px at 80% 30%, rgba(139,92,246,.22), transparent 60%), radial-gradient(800px 600px at 50% 90%, rgba(47,216,200,.16), transparent 60%), #0C0913";
       }
     } else {
-      bgCanvas.style.background = "radial-gradient(900px 600px at 20% 20%, rgba(255,77,143,.4), transparent 60%), radial-gradient(900px 700px at 80% 30%, rgba(139,92,246,.4), transparent 60%), radial-gradient(800px 600px at 50% 90%, rgba(47,216,200,.3), transparent 60%), #120E1A";
+      bgCanvas.style.background = "radial-gradient(900px 600px at 20% 20%, rgba(255,77,143,.22), transparent 60%), radial-gradient(900px 700px at 80% 30%, rgba(139,92,246,.22), transparent 60%), radial-gradient(800px 600px at 50% 90%, rgba(47,216,200,.16), transparent 60%), #0C0913";
     }
   }
 
