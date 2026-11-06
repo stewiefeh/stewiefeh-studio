@@ -665,6 +665,8 @@ section { scroll-margin-top: 96px; }
   background: radial-gradient(600px 300px at 80% -10%, rgba(255, 77, 143, 0.14), transparent 60%);
   pointer-events: none;
 }
+.plan-featured h3 { font-size: 1.9rem; }
+.plan-featured .price { font-size: 3.8rem; }
 
 .plan-badge {
   display: inline-block;
@@ -686,16 +688,16 @@ section { scroll-margin-top: 96px; }
   font-size: 3.2rem;
   letter-spacing: -0.02em;
   margin: 10px 0 6px;
+  font-variant-numeric: tabular-nums;
 }
-.price-note { font-family: var(--sans); font-size: 0.9rem; font-weight: 400; color: var(--muted); margin-left: 8px; }
-.plan-for { color: var(--muted); font-size: 0.97rem; margin-bottom: 20px; }
+.price-note { font-family: var(--sans); font-size: 0.9rem; font-weight: 400; margin-left: 8px; }
+.plan-for { font-size: 0.97rem; margin-bottom: 20px; }
 
 .plan-label {
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--muted);
   margin: 16px 0 10px;
 }
 .plan-list { list-style: none; margin-bottom: 8px; flex-grow: 1; }
@@ -710,7 +712,7 @@ section { scroll-margin-top: 96px; }
   transform: rotate(45deg);
 }
 .plan-list-thin { margin-bottom: 30px; }
-.plan-list-thin li { color: var(--muted); font-size: 0.9rem; }
+.plan-list-thin li { font-size: 0.9rem; }
 .plan-list-thin li::before { opacity: 0.5; }
 
 /* pricing card text: heavier and brighter so it holds up on the light card */
@@ -720,7 +722,68 @@ section { scroll-margin-top: 96px; }
 .price-note { font-weight: 500; color: #F1EBFC; }
 .plan-label { color: #E6DFF6; }
 
-/* ---------- about ---------- */
+/* hosting band: a ticket stub, torn off the pricing sheet */
+.host-band {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.62fr) 1fr;
+}
+.host-stub {
+  position: relative;
+  padding: clamp(28px, 4vw, 40px) clamp(24px, 3vw, 40px) clamp(28px, 4vw, 40px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.host-main {
+  border-left: 2px dashed rgba(244, 241, 234, 0.28);
+  padding: clamp(28px, 4vw, 40px) 0 clamp(28px, 4vw, 40px) clamp(24px, 4vw, 48px);
+}
+.host-stub h3 { font-family: var(--display); font-weight: 600; font-size: 1.7rem; }
+.host-stub .price { font-size: 3.2rem; margin: 8px 0 4px; }
+.host-terms { font-size: 0.88rem; color: var(--muted); margin-top: 10px; }
+.host-lede { max-width: 60ch; color: #F1EBFC; font-weight: 500; margin-bottom: 18px; }
+.host-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 34px;
+}
+.host-list li { position: relative; padding-left: 24px; font-size: 0.94rem; color: var(--muted); }
+.host-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.5em;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: var(--teal);
+  transform: rotate(45deg);
+}
+
+/* pricing answers */
+.faq { margin-top: clamp(40px, 7vh, 72px); max-width: 760px; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 20px 4px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.18rem;
+  transition: color 0.25s ease;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: #fff; }
+.fq-x { font-family: var(--sans); font-weight: 400; font-size: 1.4rem; line-height: 1; color: var(--pink); transition: transform 0.35s var(--ease); }
+.faq-item[open] .fq-x { transform: rotate(45deg); }
+.faq-item p { color: var(--muted); font-size: 0.97rem; padding: 0 4px 22px; max-width: 66ch; }
+
+/* ---------- about ---------- *//* ---------- about ---------- */
 
 .about-body { max-width: 62ch; display: grid; gap: 18px; font-size: 1.05rem; color: var(--muted); }
 .about-body strong { color: var(--text); font-weight: 500; }
@@ -779,6 +842,8 @@ section { scroll-margin-top: 96px; }
   color: var(--muted);
   font-size: 0.9rem;
 }
+.foot-links { display: inline-flex; align-items: center; gap: 10px; }
+.foot-links a { color: var(--text); text-decoration: none; }
 .footer a { color: var(--text); text-decoration: none; }
 .footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -813,6 +878,10 @@ html.js .hero-title.ready .ch { opacity: 1; transform: none; }
 }
 @media (max-width: 720px) {
   section { padding-top: 76px; padding-bottom: 76px; }
+  .host-band { grid-template-columns: 1fr; }
+  .host-main { border-left: 0; border-top: 2px dashed rgba(244, 241, 234, 0.28); padding-left: 0; padding-top: 24px; }
+  .host-list { grid-template-columns: 1fr; }
+  .faq-item summary { font-size: 1.05rem; }
   .nav-links { display: none; }
   .menu-btn { display: flex; }
   .nav .btn-light { display: none; }
